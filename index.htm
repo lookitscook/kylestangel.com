@@ -3,18 +3,32 @@
         <title>Kyle Stangel</title>
         <style type="text/css">
             body{
-                font-family:"Comic Sans MS", cursive, sans-serif;
+                font-family:"Comic Sans MS";
                 background:pink;
-                padding:10em 0;
+                padding:3em 0;
+            }
+            @keyframes blink {  
+              0% { opacity: 1.0; }
+              50% { opacity: 0.0; }
+              100% { opacity: 1.0; }
+            }
+            @-webkit-keyframes blink {
+              0% { opacity: 1.0; }
+              50% { opacity: 0.0; }
+              100% { opacity: 1.0; }
             }
             blink{
                 color:yellow;
                 font-size:6em;
                 margin:0 0.1em;
                 font-weight:bold;
+                animation: blink 0.9s step-start 0s infinite;
+                -webkit-animation: blink 0.9s step-start 0s infinite;
             }
             blink:nth-child(1){
                 color:white;
+                animation: blink 0.4s step-start 0s infinite;
+                -webkit-animation: blink 0.4s step-start 0s infinite;
             }
         </style>
     </head>

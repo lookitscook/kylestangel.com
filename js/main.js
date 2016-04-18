@@ -1,13 +1,11 @@
 $(function() {
   var k = kontext( document.querySelector( '.kontext' ) );
 
-  var scene = document.getElementById('staff-list');
-  var parallax = new Parallax(scene);
+  /*var scene = document.getElementById('staff-list');
+  var parallax = new Parallax(scene);*/
 
   /*$('.headline').plaxify()
   $.plax.enable()*/
-
-  initParticles();
 
   var nextArray = document.body.getElementsByClassName( 'next-button' );
 
@@ -22,9 +20,25 @@ $(function() {
 		next.ontouchstart = function( event ) {
          k.show( event.target.getAttribute( 'index' ));
       };
-		//bulletsContainer.appendChild( bullet );
 	}
 
+   //Developer
+   initParticles();
+
+   //Husband
+   var oneDay = 24*60*60*1000; // hours*minutes*seconds*milliseconds
+   var aDate = new Date(2014, 9, 18);
+   var tDate = new Date();
+   var diffDays = Math.round(Math.abs((aDate.getTime() - tDate.getTime())/(oneDay)));
+
+   $('.anniversary').text(diffDays + " days");
+
+   //Runner
+   /*var clock = $('.clock').FlipClock({
+        clockFace: 'MinuteCounter'
+   });*/
+
+});
 
 function initParticles(){
    particlesJS('particles-js',{
@@ -139,5 +153,3 @@ function initParticles(){
    }
 );
 }
-
-});
